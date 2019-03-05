@@ -1,20 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>jQuery template</title>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js" ></script>
- <script>
-    
-    //style
-    $(function(){
-        //where you're going to type your jquery/javascript
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script>
+        //style
         
-    });
-</script>
-  </head>
-  <body>
-  
-  </body>
+        $(function() {
+            //where you're going to type your jquery/javascript
+            //inputs go here to gather information
+            $('button').click(function() {
+                
+                
+                var event = $('#event').val();
+                console.log(event);
+                
+                var givername = $('#givername').val();
+                console.log(givername);
+
+                var name = $('#name').val();
+                console.log(name);
+
+                var note = $('#note').val();
+                console.log(note);
+
+                var notecolor = $('#notecolor').val();
+                console.log(notecolor);
+
+                var eventcolor = $('#eventcolor').val();
+                console.log(eventcolor);
+                
+                var namescolor = $('#namescolor').val();
+                console.log(namescolor)
+                
+               var backgroundcolor = $('#backgroundcolor').val();
+                console.log(backgroundcolor);
+                
+                 var thewidth = $('#thewidth').val();
+                console.log(thewidth);
+              
+                 var theheight = $('#theheight').val();
+                console.log(theheight);
+              
+
+          $( '#first' ).fadeOut( "slow" );
+     
+                var title =  event;
+                console.log(title);
+                $('h1').html(title).css('color', eventcolor).css('font-family','Helvetica').css('font-style','italic').css('font-size', '50px');
+
+                
+                 var letter= note;
+                console.log(letter);
+                $('h2').html(letter).css('color',notecolor).css('font-family','Monospace').css('font-size', '30px');
+                
+                var bothnames= "This is made from "+ givername + " and this was made for " + name;                
+                console.log(bothnames);
+                $('p').html(bothnames).css('color', namescolor).css('font-family','Monospace').css('font-size', '25px');
+                
+              $( '#second' ).fadeIn(3000);
+              $('#second').css('background-color', backgroundcolor).css('width', thewidth).css('height', theheight);
+               
+            });
+        });
+    </script>
+ 
+ <style>
+
+     #first{
+         background: linear-gradient(-90deg, turquoise , lightblue);
+         text-align:center;
+         font-size:25px;
+     }
+     #second{
+         text-align:center;
+     }
+ </style>
+</head>
+
+<body>
+     <div id="first">
+     What's The Event or Occasion:<br>  
+     (ex: Father's day, Happy Birthday, Mother's Day)<br>  
+     <input id="event"><br>  
+      Color font of Event:<input id="eventcolor"><br>  
+        Note To The Reciever: <input id="note"><br>
+        Color font of Note:<input id="notecolor"><br>  
+          Givers Name: <input id="givername"><br>  
+        Recievers Name: <input id="name"><br>
+       Color font of  Names:<input id="namescolor"><br>  
+        Color of background: <input id="backgroundcolor"><br>
+       The size of the width of the card: (Type number)<input id="thewidth"><br>
+         The size of the height of the card: (Type number)<input id="theheight"><br>
+        <button>Submit</button>
+        </div>
+        
+        <div id="second">
+        <h1></h1>
+        <h2></h2>
+        <p></p>
+        
+        </div>
+</body>
+
 </html>
